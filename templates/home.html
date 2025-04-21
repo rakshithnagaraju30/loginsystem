@@ -191,6 +191,147 @@
         </div>
     </section>
 
+    <section class="services-section">
+        <style>
+            .services-section {
+                padding: 6rem 2rem;
+                background: #fff;
+            }
+
+            .services-container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .services-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+                margin-top: 3rem;
+            }
+
+            .service-card {
+                padding: 2rem;
+                border-radius: 10px;
+                background: white;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+                animation: fadeIn 0.5s ease-out;
+            }
+
+            .service-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .service-header {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1.5rem;
+            }
+
+            .service-icon {
+                width: 50px;
+                height: 50px;
+                background: linear-gradient(135deg, #2c3e50, #3498db);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 1rem;
+            }
+
+            .service-icon i {
+                color: white;
+                font-size: 1.5rem;
+            }
+
+            .service-title {
+                color: #2c3e50;
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .features-list {
+                list-style: none;
+                margin-top: 1.5rem;
+            }
+
+            .features-list li {
+                margin-bottom: 0.8rem;
+                display: flex;
+                align-items: center;
+                color: #555;
+            }
+
+            .features-list i {
+                color: #3498db;
+                margin-right: 0.5rem;
+            }
+
+            .section-title {
+                text-align: center;
+                color: #2c3e50;
+                margin-bottom: 2rem;
+            }
+
+            .section-description {
+                text-align: center;
+                color: #666;
+                max-width: 800px;
+                margin: 0 auto 3rem auto;
+                line-height: 1.6;
+            }
+        </style>
+
+        <div class="services-container">
+            <h2 class="section-title">How Fixora Works</h2>
+            <p class="section-description">
+                Fixora connects skilled professionals with customers seeking quality home services. 
+                Choose your role and start your journey with us today.
+            </p>
+
+            <div class="services-grid">
+                <!-- For Customers -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="service-title">For Customers</h3>
+                    </div>
+                    <p>Find trusted professionals for all your home service needs</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Easy service booking</li>
+                        <li><i class="fas fa-check"></i> Verified professionals</li>
+                        <li><i class="fas fa-check"></i> Secure payment system</li>
+                        <li><i class="fas fa-check"></i> Real-time service tracking</li>
+                        <li><i class="fas fa-check"></i> Review and rating system</li>
+                        <li><i class="fas fa-check"></i> 24/7 customer support</li>
+                    </ul>
+                </div>
+
+                <!-- For Professionals -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="service-title">For Professionals</h3>
+                    </div>
+                    <p>Join our platform and grow your service business</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Free professional profile</li>
+                        <li><i class="fas fa-check"></i> Job matching system</li>
+                        <li><i class="fas fa-check"></i> Flexible schedule management</li>
+                        <li><i class="fas fa-check"></i> Secure payment processing</li>
+                        <li><i class="fas fa-check"></i> Performance analytics</li>
+                        <li><i class="fas fa-check"></i> Business growth tools</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="about" class="map-section">
         <div class="map-container">
             <h2>Find Us</h2>
