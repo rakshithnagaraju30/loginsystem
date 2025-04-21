@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fixora - Professional Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            margin-right: auto;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-1.2.1');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: slideDown 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 4rem 2rem;
+            background-color: #f5f5f5;
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff;
+            }
+            to {
+                text-shadow: 0 0 20px #fff;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Flash Messages */
+        .message-container {
+            margin-top: 70px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .info {
+            background-color: #e6f3ff;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <div class="logo">Fixora</div>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="#about">About</a>
+        </div>
+    </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="message-container {{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Fixora</h1>
+            <p>Your trusted platform for professional services. Connect with skilled professionals for all your repair and maintenance needs.</p>
+        </div>
+    </section>
+
+    <section id="about" class="map-section">
+        <div class="map-container">
+            <h2>Find Us</h2>
+            <p>Visit our office or contact us for more information</p>
+            <div style="margin-top: 2rem;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAPS_EMBED_CODE"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-links">
+            <a href="mailto:contact@fixora.com">
+                <i class="fas fa-envelope"></i> Email Us
+            </a>
+            <a href="tel:+1234567890">
+                <i class="fas fa-phone"></i> Call Us
+            </a>
+            <a href="https://wa.me/1234567890">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Add Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
+</body>
+</html>
