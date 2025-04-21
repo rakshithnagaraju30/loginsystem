@@ -34,6 +34,11 @@ def register():
         username = request.form['username']
         email = request.form['email']
         password = request.form['password']
+        confirm_password = request.form['confirm_password']
+
+        if password != confirm_password:
+            flash('Passwords do not match!', 'danger')
+            return render_template('register.html')
 
         hashed_password = generate_password_hash(password)
 
